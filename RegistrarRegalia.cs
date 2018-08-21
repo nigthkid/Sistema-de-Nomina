@@ -2312,5 +2312,19 @@ namespace RHInfosyp
         {
            TltpCedula.SetToolTip(TbCedula, "Introducir correctamente la Cedula!");
         }
+
+        private void BtnConsultarEmpleado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmEmpleados emp = new FrmEmpleados();
+                emp.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -83,5 +83,19 @@ private void BtnSalir_Click_1(object sender, EventArgs e)
             }
 
         }
+
+        private void BtnConsultarEmpleado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmEmpleados emp = new FrmEmpleados();
+                emp.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

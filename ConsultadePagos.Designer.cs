@@ -37,6 +37,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.BtnConsultarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvConsultaPagos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnConsultarEmpleado);
             this.groupBox1.Controls.Add(this.TbCedula);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TbNombre);
@@ -126,6 +128,17 @@
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click_1);
             // 
+            // BtnConsultarEmpleado
+            // 
+            this.BtnConsultarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultarEmpleado.Location = new System.Drawing.Point(338, 38);
+            this.BtnConsultarEmpleado.Name = "BtnConsultarEmpleado";
+            this.BtnConsultarEmpleado.Size = new System.Drawing.Size(137, 25);
+            this.BtnConsultarEmpleado.TabIndex = 41;
+            this.BtnConsultarEmpleado.Text = "&Consultar Empleados";
+            this.BtnConsultarEmpleado.UseVisualStyleBackColor = true;
+            this.BtnConsultarEmpleado.Click += new System.EventHandler(this.BtnConsultarEmpleado_Click);
+            // 
             // ConsultadePagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,5 +167,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Button BtnConsultarEmpleado;
     }
 }

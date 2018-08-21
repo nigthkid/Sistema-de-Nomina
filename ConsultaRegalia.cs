@@ -68,5 +68,19 @@ namespace RHInfosyp
             }
 
         }
+
+        private void BtnConsultarEmpleado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmEmpleados emp = new FrmEmpleados();
+                emp.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

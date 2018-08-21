@@ -63,6 +63,7 @@
             this.BtnWord = new System.Windows.Forms.Button();
             this.BtnPDF = new System.Windows.Forms.Button();
             this.TltpCedula = new System.Windows.Forms.ToolTip(this.components);
+            this.BtnConsultarEmpleado = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(32, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(660, 177);
+            this.groupBox1.Size = new System.Drawing.Size(660, 166);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
@@ -388,11 +389,23 @@
             // 
             this.TltpCedula.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // BtnConsultarEmpleado
+            // 
+            this.BtnConsultarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultarEmpleado.Location = new System.Drawing.Point(555, 189);
+            this.BtnConsultarEmpleado.Name = "BtnConsultarEmpleado";
+            this.BtnConsultarEmpleado.Size = new System.Drawing.Size(137, 25);
+            this.BtnConsultarEmpleado.TabIndex = 41;
+            this.BtnConsultarEmpleado.Text = "&Consultar Empleados";
+            this.BtnConsultarEmpleado.UseVisualStyleBackColor = true;
+            this.BtnConsultarEmpleado.Click += new System.EventHandler(this.BtnConsultarEmpleado_Click);
+            // 
             // RegistrarRegalia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 308);
+            this.Controls.Add(this.BtnConsultarEmpleado);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrarRegalia";
@@ -443,5 +456,6 @@
         private System.Windows.Forms.DateTimePicker DtpHasta;
         private System.Windows.Forms.DateTimePicker DtpDesde;
         private System.Windows.Forms.ToolTip TltpCedula;
+        private System.Windows.Forms.Button BtnConsultarEmpleado;
     }
 }

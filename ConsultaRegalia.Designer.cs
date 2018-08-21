@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnConsultarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvConsultaRegalias)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnConsultarEmpleado);
             this.groupBox1.Controls.Add(this.TbCedula);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TbNombre);
@@ -126,6 +128,17 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Nombres:";
             // 
+            // BtnConsultarEmpleado
+            // 
+            this.BtnConsultarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultarEmpleado.Location = new System.Drawing.Point(341, 40);
+            this.BtnConsultarEmpleado.Name = "BtnConsultarEmpleado";
+            this.BtnConsultarEmpleado.Size = new System.Drawing.Size(137, 25);
+            this.BtnConsultarEmpleado.TabIndex = 41;
+            this.BtnConsultarEmpleado.Text = "&Consultar Empleados";
+            this.BtnConsultarEmpleado.UseVisualStyleBackColor = true;
+            this.BtnConsultarEmpleado.Click += new System.EventHandler(this.BtnConsultarEmpleado_Click);
+            // 
             // ConsultaRegalia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnConsultarEmpleado;
     }
 }
