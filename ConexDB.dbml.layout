@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ConexDB">
+  <DataContextMoniker Name="/ConexDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="06b0cb85-f651-41d3-84a1-ab1fcc09e956" absoluteBounds="0.75, 5.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConexDBDataContext/Bancos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45f5b2f4-b425-435f-b64f-f494ab06acb6" absoluteBounds="0.765, 6.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc19eec8-b254-4848-9a88-fb3f9cf2fe35" absoluteBounds="3.5, 2, 2, 3.1170068359375">
+      <DataClassMoniker Name="/ConexDBDataContext/Empleados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="807e43c1-a11a-471a-9620-14e81f631b3b" absoluteBounds="3.515, 2.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="705be470-1acb-4452-bd6c-7c6d45a3390e" absoluteBounds="0.75, 2.875, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/ConexDBDataContext/Empresas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f3f8d54-60fa-40f0-9f76-ca859965a3ff" absoluteBounds="0.765, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d04725ea-33bc-4d33-8e44-f2e50253d640" absoluteBounds="6.25, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConexDBDataContext/Regalias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5992d188-dce1-49e4-8773-76b279211558" absoluteBounds="6.265, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0ac6045-0b17-4cac-99ab-701e54c90875" absoluteBounds="0.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/ConexDBDataContext/Seguros" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b93c85bb-1206-4c34-9902-e8c0d0e2f78e" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 7.032900390625); (4.03125 : 7.032900390625); (4.03125 : 5.1170068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConexDBDataContext/Bancos/Bancos_Empleados" />
+      <nodes>
+        <classShapeMoniker Id="06b0cb85-f651-41d3-84a1-ab1fcc09e956" />
+        <classShapeMoniker Id="cc19eec8-b254-4848-9a88-fb3f9cf2fe35" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.56814697265625); (3.5 : 3.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ConexDBDataContext/Empresas/Empresas_Empleados" />
+      <nodes>
+        <classShapeMoniker Id="705be470-1acb-4452-bd6c-7c6d45a3390e" />
+        <classShapeMoniker Id="cc19eec8-b254-4848-9a88-fb3f9cf2fe35" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.35179768880208); (6.25 : 2.35179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ConexDBDataContext/Empleados/Empleados_Regalias" />
+      <nodes>
+        <classShapeMoniker Id="cc19eec8-b254-4848-9a88-fb3f9cf2fe35" />
+        <classShapeMoniker Id="d04725ea-33bc-4d33-8e44-f2e50253d640" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.3749995); (4.5 : 1.3749995); (4.5 : 2)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ConexDBDataContext/Seguros/Seguros_Empleados" />
+      <nodes>
+        <classShapeMoniker Id="c0ac6045-0b17-4cac-99ab-701e54c90875" />
+        <classShapeMoniker Id="cc19eec8-b254-4848-9a88-fb3f9cf2fe35" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0b0efb71-7fe0-4ea6-a2a8-36ff63e47513" absoluteBounds="5.875, 3.375, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/ConexDBDataContext/Pagos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e105d6b2-9494-472c-a150-757016291e7d" absoluteBounds="5.89, 3.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.24600341796875); (5.875 : 4.24600341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConexDBDataContext/Empleados/Empleados_Pagos" />
+      <nodes>
+        <classShapeMoniker Id="cc19eec8-b254-4848-9a88-fb3f9cf2fe35" />
+        <classShapeMoniker Id="0b0efb71-7fe0-4ea6-a2a8-36ff63e47513" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

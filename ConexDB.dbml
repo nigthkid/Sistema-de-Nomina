@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBInfosyp" Class="ConexDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-AKKJPLQ;Initial Catalog=DBInfosyp;Integrated Security=True" SettingsObjectName="RHInfosyp.Properties.Settings" SettingsPropertyName="DBInfosypConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bancos" Member="Bancos">
+    <Type Name="Bancos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Bancos_Empleados" Member="Empleados" ThisKey="Id" OtherKey="BancoID" Type="Empleados" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Empleados" Member="Empleados">
+    <Type Name="Empleados">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sueldo_Fijo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="No_Cuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SeguroID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BancoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Empleados_Regalias" Member="Regalias" ThisKey="Id" OtherKey="EmpleadoID" Type="Regalias" />
+      <Association Name="Empleados_Pagos" Member="Pagos" ThisKey="Id" OtherKey="EmpleadoID" Type="Pagos" />
+      <Association Name="Bancos_Empleados" Member="Bancos" ThisKey="BancoID" OtherKey="Id" Type="Bancos" IsForeignKey="true" />
+      <Association Name="Empresas_Empleados" Member="Empresas" ThisKey="EmpresaID" OtherKey="Id" Type="Empresas" IsForeignKey="true" />
+      <Association Name="Seguros_Empleados" Member="Seguros" ThisKey="SeguroID" OtherKey="Id" Type="Seguros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Empresas" Member="Empresas">
+    <Type Name="Empresas">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Empresas_Empleados" Member="Empleados" ThisKey="Id" OtherKey="EmpresaID" Type="Empleados" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Regalias" Member="Regalias">
+    <Type Name="Regalias">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EmpleadoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Empleados_Regalias" Member="Empleados" ThisKey="EmpleadoID" OtherKey="Id" Type="Empleados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seguros" Member="Seguros">
+    <Type Name="Seguros">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Seguros_Empleados" Member="Empleados" ThisKey="Id" OtherKey="SeguroID" Type="Empleados" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pagos" Member="Pagos">
+    <Type Name="Pagos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Impuesto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total_Cobrado" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Reembolso_Gastos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Horas_Extras" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Bono_Especial" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Seguro_Salud" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Adicional" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EmpleadoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SueldoBruto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Empleados_Pagos" Member="Empleados" ThisKey="EmpleadoID" OtherKey="Id" Type="Empleados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Sp_AgregarBancos" Method="Sp_AgregarBancos">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estatus" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_BorrarBancos" Method="Sp_BorrarBancos">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_EditarBancos" Method="Sp_EditarBancos">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estatus" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_ConsultaBancos" Method="Sp_ConsultaBancos">
+    <ElementType Name="Sp_ConsultaBancosResult">
+      <Column Name="[Codigo del Banco]" Member="Codigo_del_Banco" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha Registro]" Member="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_BuscarBancos" Method="Sp_BuscarBancos">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Sp_BuscarBancosResult">
+      <Column Name="[Codigo del Banco]" Member="Codigo_del_Banco" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha Registro]" Member="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_AgregarEmpresas" Method="Sp_AgregarEmpresas">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_BorrarEmpresas" Method="Sp_BorrarEmpresas">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_BuscarEmpresas" Method="Sp_BuscarEmpresas">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Sp_BuscarEmpresasResult">
+      <Column Name="[Codigo del Empresa]" Member="Codigo_del_Empresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha Registro]" Member="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_EditarEmpresas" Method="Sp_EditarEmpresas">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_ConsultarEmpresas" Method="Sp_ConsultarEmpresas">
+    <ElementType Name="Sp_ConsultarEmpresasResult">
+      <Column Name="[Codigo de Empresa]" Member="Codigo_de_Empresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha Registro]" Member="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_AgregarSeguros" Method="Sp_AgregarSeguros">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_BorrarSeguros" Method="Sp_BorrarSeguros">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_BuscarSeguros" Method="Sp_BuscarSeguros">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Sp_BuscarSegurosResult">
+      <Column Name="[Codigo del Seguro]" Member="Codigo_del_Seguro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha Registro]" Member="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_EditarSeguros" Method="Sp_EditarSeguros">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_ConsultarSeguros" Method="Sp_ConsultarSeguros">
+    <ElementType Name="Sp_ConsultarSegurosResult">
+      <Column Name="[Codigo del Seguro]" Member="Codigo_del_Seguro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha Registro]" Member="Fecha_Registro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_AgregarEmpleado" Method="Sp_AgregarEmpleado">
+    <Parameter Name="nombres" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellidos" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="edad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sueldo_fijo" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nocuenta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="puesto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="empresaid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="seguroid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="bancoid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_BuscarEmpleados" Method="Sp_BuscarEmpleados">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Sp_BuscarEmpleadosResult">
+      <Column Name="[Codigo del Empleado]" Member="Codigo_del_Empleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sueldo_Fijo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="No_Cuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha de Ingreso]" Member="Fecha_de_Ingreso" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Seguro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Banco" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_BorrarEmpleado" Method="Sp_BorrarEmpleado">
+    <Parameter Name="nombres" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_ConsultaEmpleados" Method="Sp_ConsultaEmpleados">
+    <ElementType Name="Sp_ConsultaEmpleadosResult">
+      <Column Name="[Codigo del Empleado]" Member="Codigo_del_Empleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sueldo_Fijo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="No_Cuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Fecha de Ingreso]" Member="Fecha_de_Ingreso" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Seguro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Banco" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_EditarEmpleado" Method="Sp_EditarEmpleado">
+    <Parameter Name="nombres" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellidos" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="edad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sueldo_fijo" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nocuenta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="puesto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="empresaid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="seguroid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="bancoid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaPagoRegistrado" Method="ConsultaPagoRegistrado">
+    <Parameter Name="idempleado" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaPagoRegistradoResult">
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Impuesto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total_Cobrado" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Reembolso_Gastos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Horas_Extras" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Bono_Especial" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Seguro_Salud" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Adicional" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_AgregarPagos" Method="SP_AgregarPagos">
+    <Parameter Name="impuesto" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="totalcobrado" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="reembolsogastos" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="horasextras" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="bonoespecial" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="segurosalud" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="adicional" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="empleadoid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sueldobruto" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_AgregarRegalia" Method="Sp_AgregarRegalia">
+    <Parameter Name="monto" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="empleadoid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_ConsultaRegalia" Method="Sp_ConsultaRegalia">
+    <Parameter Name="idempleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Sp_ConsultaRegaliaResult">
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ConsultaPago" Method="SP_ConsultaPago">
+    <Parameter Name="idempleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_ConsultaPagoResult">
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Banco" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Impuesto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total_Cobrado" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Reembolso_Gastos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Horas_Extras" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Bono_Especial" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Seguro_Salud" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Adicional" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SueldoBruto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ReporteRegalia" Method="SP_ReporteRegalia">
+    <Parameter Name="banco" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SP_ReporteRegaliaResult">
+      <Column Name="Banco" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Monto Cobrado]" Member="Monto_Cobrado" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_ReportePagos" Method="Sp_ReportePagos">
+    <Parameter Name="banco" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="Sp_ReportePagosResult">
+      <Column Name="Banco" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descuentos" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="[Sub-Total]" Member="Sub_Total" Type="System.Decimal" DbType="Decimal(24,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
