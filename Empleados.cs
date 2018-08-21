@@ -96,7 +96,15 @@ namespace RHInfosyp
 
                     TbNombres.Text = String.Empty;
                     TbApellidos.Text = String.Empty;
+                    TbEdad.Text = String.Empty;
+                    TbSueldo.Text = String.Empty;
                     TbCedula.Text = String.Empty;
+                    TbNoCuenta.Text = String.Empty;
+                    TbPuesto.Text = String.Empty;
+                    CbEmpresa.Text = String.Empty;
+                    CbSeguro.Text = String.Empty;
+                    CbBanco.Text = String.Empty;
+
                 }
         
 
@@ -104,7 +112,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("El Empleado no se puede borrar esta relacionado con otras informaciones Importantes!");
             }
 
         }
