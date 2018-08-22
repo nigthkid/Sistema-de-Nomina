@@ -28,7 +28,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentalo nuevamente!");
             }
            
         }
@@ -52,7 +52,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentalo nuevamente!"); 
             }
 
         }
@@ -82,7 +82,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentalo nuevamente!");
             }
 
 
@@ -113,7 +113,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("No se puede Borrar esta entidad esta relacionada con Informaciones Importantes!");
             }
 
 
@@ -143,7 +143,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("No se puede Editar || Intentalo nuevamente!");
             }
 
         }
@@ -158,7 +158,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentalo nuevamente!");
             }
 
         }
@@ -187,7 +187,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentalo nuevamente!");
             }
 
         }
@@ -202,7 +202,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentalo nuevamente!"); 
             }
         }
     }

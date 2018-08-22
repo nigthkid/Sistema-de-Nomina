@@ -21,7 +21,16 @@ namespace RHInfosyp
         ConexDBDataContext conexdb = new ConexDBDataContext();
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Intentarlo nuevamente!");
+            }
+            
         }
 
         private void ReportedePagos_Load(object sender, EventArgs e)
@@ -67,7 +76,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -138,7 +147,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
 
 

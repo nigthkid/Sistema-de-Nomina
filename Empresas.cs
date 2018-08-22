@@ -53,7 +53,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -80,7 +80,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -109,7 +109,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("No se puede borrar esta Empresa esta relacionada con Informaciones Importantes!");
             }
         }
 
@@ -138,7 +138,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -152,7 +152,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -181,7 +181,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
 
            
@@ -197,7 +197,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
     }

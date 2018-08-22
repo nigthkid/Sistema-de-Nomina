@@ -62,7 +62,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
            
 
@@ -79,7 +79,7 @@ private void BtnSalir_Click_1(object sender, EventArgs e)
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
 
         }
@@ -94,7 +94,7 @@ private void BtnSalir_Click_1(object sender, EventArgs e)
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
     }

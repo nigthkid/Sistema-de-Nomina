@@ -90,7 +90,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -182,7 +182,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -525,7 +525,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -544,7 +544,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
     }

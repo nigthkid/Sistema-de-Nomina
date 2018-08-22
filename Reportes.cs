@@ -19,7 +19,17 @@ namespace RHInfosyp
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Intentalo nuevamente!");
+            }
+
+            
         }
 
         private void BtnReportePagos_Click(object sender, EventArgs e)

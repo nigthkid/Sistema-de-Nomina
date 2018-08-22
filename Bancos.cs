@@ -45,7 +45,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -73,7 +73,8 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("El Banco no se puede borrar esta relacionado con otras informaciones Importantes!");
+
             }
         }
 
@@ -103,7 +104,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -131,7 +132,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -152,7 +153,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
 
@@ -174,7 +175,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
 
         }
@@ -190,7 +191,7 @@ namespace RHInfosyp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Intentarlo nuevamente!");
             }
         }
     }
